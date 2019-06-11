@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  vertical-align: middle;
+}
+
+/* Position the image container (needed to position the left and right arrows) */
+.container {
+  position: relative;
+  margin-left: 170px;
+  margin-right: 170px;
+  margin-top: 10px;
+ margin-bottom: 20px;
+
+
+
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Container for image text */
+.caption-container {
+  text-align: center;
+  background-color: #222;
+  padding: 2px 16px;
+  color: white;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Six columns side by side */
+.column {
+  float: left;
+  width: 11.1%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+</style>
+<body>
+
+
+
+<div class="container">
+  <div class="mySlides">
+    <div class="numbertext">1 / 9</div>
+    <img src="Ai Based Surveillance Bot for Households-02.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">2 / 9</div>
+    <img src="Growth Box.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">3 / 9</div>
+    <img src="Hygieia-05.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">4 / 9</div>
+    <img src="iHale-08.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">5 / 9</div>
+    <img src="Machine Vision Inspection-Qc of Automotive Parts-03.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">6 / 9</div>
+    <img src="Semi-Automated Rov for Hull-01-01.jpg" style="width:100%">
+  </div>
+
+    <div class="mySlides">
+      <div class="numbertext">7 / 9</div>
+      <img src="Smart Insulin Pump-09.jpg" style="width:100%">
+    </div>
+    <div class="mySlides">
+      <div class="numbertext">8 / 9</div>
+      <img src="Smart Kit for Non-Invasive-04.jpg" style="width:100%">
+    </div>
+    <div class="mySlides">
+      <div class="numbertext">9 / 9</div>
+      <img src="Tactical Survilance.jpg" style="width:100%">
+    </div>
+
+
+  <a class="prev" onclick="plusSlides(-1)">❮</a>
+  <a class="next" onclick="plusSlides(1)">❯</a>
+
+  <div class="caption-container">
+    <p id="caption"></p>
+  </div>
+
+  <div class="row">
+    <div class="column">
+      <img class="demo cursor" src="Ai Based Surveillance Bot for Households-02.jpg" style="width:100%" onclick="currentSlide(1)" alt="Ai Based Surveillance Bot for Households">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="Growth Box.jpg" style="width:100%" onclick="currentSlide(2)" alt="Growth Box">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="Hygieia-05.jpg" style="width:100%" onclick="currentSlide(3)" alt="Hygieia">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="iHale-08.jpg" style="width:100%" onclick="currentSlide(4)" alt="iHale">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="Machine Vision Inspection-Qc of Automotive Parts-03.jpg" style="width:100%" onclick="currentSlide(5)" alt="Machine Vision Inspection-Qc of Automotive Parts">
+    </div>
+
+    <div class="column">
+      <img class="demo cursor" src="Semi-Automated Rov for Hull-01-01.jpg" style="width:100%" onclick="currentSlide(6)" alt="Semi-Automated Rov for Hull">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="Smart Insulin Pump-09.jpg" style="width:100%" onclick="currentSlide(7)" alt="Smart Insulin Pump">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="Smart Kit for Non-Invasive-04.jpg" style="width:100%" onclick="currentSlide(8)" alt="Smart Kit for Non-Invasive">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="Tactical Survilance.jpg" style="width:100%" onclick="currentSlide(9)" alt="Tactical Survilance">
+    </div>
+  </div>
+</div>
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
+
+</body>
+</html>
